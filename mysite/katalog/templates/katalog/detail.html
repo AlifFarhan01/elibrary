@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+{% block content %} 
+{% load static %}
+
+<div class="container">
+    <div class="container mt-5">
+        <div class="card mb-3">
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <!-- Menampilkan gambar cover buku -->
+                    <img src="{{ detail_buku.book_cover.url }}" class="card-img" alt="Cover Buku">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <!-- Menampilkan detail buku -->
+                        <h5 class="card-title">{{ detail_buku.title }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ detail_buku.author }}</h6>
+                        <p class="card-text">{{ detail_buku.desc }}</p>
+                        <p class="card-text"><small class="text-muted">{{ detail_buku.date }}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</div>
+
+{% endblock content %}

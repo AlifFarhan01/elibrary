@@ -1,0 +1,38 @@
+<div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px; height: 100vh">
+  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+    <svg class="bi pe-none me-2" width="40" height="32">
+      <use xlink:href="#bootstrap"></use>
+    </svg>
+    <span class="fs-4">Sidebar</span>
+  </a>
+  <hr />
+  <ul class="nav nav-pills flex-column mb-auto">
+    <li class="nav-item">
+     
+    <a href="/buku/create" class="nav-link {% if title == 'add buku' %} active {% else %}link-body-emphasis  {% endif %}" aria-current="page">
+    <svg class="bi pe-none me-2" width="16" height="16">
+        <use xlink:href="#home"></use>
+    </svg>
+    Add Buku
+</a>
+
+    </li>
+    <li>
+      <a href="/buku/katalog" class="nav-link {% if title == 'katalog' or title == 'Edit Buku'  %} active  {% else %}link-body-emphasis  {% endif %} ">
+        <svg class="bi pe-none me-2" width="16" height="16">
+          <use xlink:href="#speedometer2"></use>
+        </svg>
+        Katalog Buku
+      </a>
+    </li>
+    
+  </ul>
+  <hr />
+  <div class="dropdown">
+  <a class="dropdown-item" href="{% url 'login:logout' %}">Log out</a></li>
+    </a>
+
+      
+   
+  </div>
+</div>

@@ -1,0 +1,67 @@
+{% extends "base.html" %} 
+{% block content %} 
+{% load static %}
+
+<div class="container">
+    <h1>{{ title }}</h1>
+
+    <div class="card">
+        <h5 class="card-header">{{ title }}</h5>
+        <div class="card-body">
+         
+            <form method="post"  enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                <!-- Kolom Pertama -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        
+                        <label for="titleInput" class="form-label">Title</label>
+                        {{ f_buku.title }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="authorInput" class="form-label">Author</label>
+                        {{ f_buku.author }}
+                    </div>
+                    <div class="mb-3">
+                        <label for="pubDateInput" class="form-label">Publication Date</label>
+                        {{ f_buku.date }}
+                        
+                    </div>
+                </div>
+
+                <!-- Kolom Kedua -->
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label for="coverInput" class="form-label">Book Cover</label>
+                        <div class="input-group">
+                        {{ f_buku.book_cover }}
+                             
+                            <label class="input-group-text" for="coverInput">Upload</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pdfInput" class="form-label">PDF Book</label>
+                        <div class="input-group">
+                             {{ f_buku.pdf_file}}
+                            <label class="input-group-text" for="pdfInput">Upload</label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="descriptionInput" class="form-label">Descriptions</label>
+                             {{ f_buku.desc}}
+                        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tombol Save -->
+            <a href="{% url 'katalog:index' %}" class="btn btn-danger">kembali</a>
+            <button type="submit" class="btn btn-primary">Simpan</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
